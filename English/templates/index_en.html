@@ -1,0 +1,195 @@
+{% extends 'base_en.html' %}
+{% block content %}
+<section id="intro">   
+    <div class="intro-container wow fadeIn" class="container demo" class="content">
+        <canvas id="demo-canvas"></canvas>
+        <div class="container demo">
+   <div class="content">
+      <div>
+         <canvas id="demo-canvas"></canvas>
+           <h1  class="main-title" id="ggg" class="mb-4 pb-0"> 
+                    WELCOME TO
+   <br>Vardenis  "Badeyan"  state  college</h1>  </br>     
+      </div>
+   </div>
+</div>            
+    </div>
+  </section>
+
+  <main id="main">
+
+ 
+    <section id="about">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6">
+              <h2>About college</h2>
+              <p>{{ enaboutcollege.txt }}</p>
+            </div>
+            <div class="col-lg-3">
+              <h3>Address</h3>
+              <p>{{ enaboutcollege.address }}</p>
+            </div>
+            <div class="col-lg-3">
+              <h3></h3>
+              <p><br></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+    <section id="speakers" class="wow fadeInUp">
+      <div class="container">
+        <div class="section-header">
+          <h2>Professions</h2>
+        </div>
+
+        <div class="row">
+            {% for i in enprofessions %}
+            <div class="col-lg-4 col-md-6">
+              <div class="speaker">
+                <img src="{{ i.img.url }}" alt="Speaker 1" class="img-fluid">
+                <div class="details">
+                  <h3><a href="{% url 'detail_en' i.id %}">{{ i.name }}</a></h3>
+                </div>
+              </div>
+            </div>
+            {% endfor %}        
+        </div>
+      </div>
+
+    </section>
+
+
+
+    <section id="hotels" class="section-with-bg wow fadeInUp">
+
+      <div class="container">
+        <div class="section-header">
+          <h2>Staff</h2>
+          <p>Our college staff</p>
+        </div>
+        <div class="row">
+          {% for i in staffs %}
+          <div class="col-lg-4 col-md-6">
+            <div class="speaker">
+              <img src="{{ i.img.url }}" alt="Speaker 5" class="img-fluid">
+              <div class="details">
+                <h3><a>{{ i.name }}</a></h3>
+                <p>{{ i.prof }}</p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
+
+
+    <section id="faq" class="wow fadeInUp">
+
+      <div class="container">
+
+        <div class="section-header">
+          <h2>Frequently asked Questions</h2>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+              <ul id="faq-list">
+                {% for i in questions %}
+                <li>
+                  <a data-toggle="collapse" class="collapsed" href="#faq{{ i.id }}"><center>{{ i.question }}</center><i class="fa fa-minus-circle"></i></a>
+                  <div id="faq{{ i.id }}" class="collapse" data-parent="#faq-list">
+                    <p>
+                      <center>{{ i.answer }}</center>
+                    </p>
+                  </div>
+                </li>
+                {% endfor %}
+              </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="subscribe">
+      <div class="container wow fadeInUp">
+        <div class="section-header">
+          <h2></h2>
+          <p></p>
+        </div>
+      </div>
+    </section>
+
+  
+
+
+    <section id="contact" class="section-bg wow fadeInUp">
+
+      <div class="container">
+
+        <div class="section-header">
+          <h2>Contact us</h2>
+        </div>
+        <div class="row contact-info">
+          <div class="col-md-4">
+            <div class="contact-address">
+              <i class="ion-ios-location-outline"></i>
+              <h3>Address</h3>
+              <address>{{ contactus.address }}</address>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-phone">
+              <i class="ion-ios-telephone-outline"></i>
+              <h3>Phone number</h3>
+              <p>{{ contactus.phone }}</p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-email">
+              <i class="ion-ios-email-outline"></i>
+              <h3>Email</h3>
+              <p>{{ contactus.email }}</p>
+            </div>
+          </div>
+
+        </div>
+
+
+
+
+
+        <div class="social-icons">
+          {% if contactus.facebook %}
+          <a href="{{ contactus.facebook }}" target="_blank">
+            <!-- <img src="path/to/fb.png" alt="Facebook "> -->
+            <i class="fa fa-facebook" >  &nbsp;Instagram</i>
+        
+          </a>
+          {% endif %}
+          {% if contactus.linkedin %}
+          <a href="{{ contactus.linkedin }}" target="_blank">
+            <!-- <img src="path/to/L.png" alt="Linkedin"> -->
+            <i class="fa fa-linkedin" >&nbsp;Instagram</i>
+        
+          </a>
+          {% endif %}
+          {% if contactus.instagram %}
+          <a href="{{ contactus.instagram }}" target="_blank">
+            <!-- <img src="path/to/Ins.png" alt="Instagram "> -->
+            <i class="fa fa-instagram" >&nbsp;Instagram</i>
+         </a>
+         {% endif %}
+        </div>
+        </div>
+
+{% endblock %}
+
+     
+

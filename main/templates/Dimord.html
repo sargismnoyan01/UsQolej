@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+  {% block content %}
+  <main id="main" class="main-page">
+    <section id="speakers-details" class="wow fadeIn">
+      <div class="container">
+        <div class="section-header">
+          <h2>{{ dimord.title }}</h2>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <img src="{{ dimord.img.url }}" alt="Speaker 1" class="img-fluid">
+          </div>
+          <div class="col-md-6">
+            <div class="details">
+              <li><a href="">{{ dimord.subtitle }}</a></li>
+              <p>{{ dimord.text }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+ {% endblock %}

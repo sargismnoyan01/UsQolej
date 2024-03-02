@@ -1,0 +1,355 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+#arajnayin{
+  border: transparent;
+  width: 100%;
+  height: 80px;
+}
+
+  
+  
+  #menu{
+    border: transparent;
+    width: 100%;
+    height: 80px;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    background-color: black;
+    z-index: 9;
+   
+  }
+  
+  #logo2{
+    width: 10%;
+    height: 80%;
+    border:transparent;
+    /* position: fixed; */
+   
+    
+  }
+  
+
+  #media{
+    z-index: 9;
+    border: solid 1px;
+    width: 50%;
+    height: 300px;
+    background-color:rgba(0, 0, 0, 0.5);
+    margin-right: 50%;
+    display: none;
+  }
+
+  .a_menu_media{
+    list-style: none;
+	text-decoration: none;
+	color:rgb(255, 254, 254);
+  cursor: pointer;
+  transition: 0.5s;
+  }
+  #glavni1{
+    width: 300px;
+    height: 100%;
+  }
+  
+  .pagination {
+    display: inline-block;
+    margin-top: 35%;
+    margin-left: 35%;
+  }
+  
+  .pagination a {
+    color: rgb(244, 244, 244);
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+  
+  .pagination a.active {
+    background-color: #4CAF50;
+    color: rgb(0, 0, 0);
+  }
+  
+  .pagination a:hover:not(.active) {background-color: #000000;}
+  
+  #menu1{
+    border: transparent;
+    width: 60%;
+    height: 50px;
+  }
+
+
+.a_menu{
+  list-style: none;
+	text-decoration: none;
+	color:white;
+  cursor: pointer;
+  transition: 0.5s;
+  
+ } 
+  
+
+ #ul_menu{
+	display: flex;
+	justify-content:space-around;
+	align-items: center;
+	list-style: none;
+}
+
+.ul_li{
+	position: relative;
+	display: block;
+	transition: 0.5s;
+	cursor: pointer;
+	
+}
+.ul_li:after{
+	position: absolute;
+	content: "";
+	width: 100%;
+	height: 3px;
+	top: 100%;
+	left: 0;
+	transition: transform 0.5s;
+	transform: scaleX(0);
+	transform-origin: left;
+	background-color: #f9f9f9;
+}
+
+.ul_li:hover{
+	color: #f9f9f9;
+}
+.ul_li:hover::after{
+	transform: scaleX(1);
+	transform-origin: left;
+}
+
+.a_menu{
+	list-style: none;
+	text-decoration: none;
+	color: white;
+	transition: 0.5s;
+
+}
+
+.a_menu:hover{
+	color: #ffffff;
+	transition: transform 0.5s;
+
+
+}
+
+
+
+#glxavor11{
+  border: transparent;
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(0deg,rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(../img/gradaran.jpg); 
+  background-size: 100% 100%;
+  background-position: center;
+  background-attachment: scroll;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+ 
+}
+
+#cank{
+  border: transparent;
+  width: 70%;
+  height: 90%;
+  
+}
+
+#gradaran{
+  border:transparent;
+  width: 40%;
+  height: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#title_gr{
+  color: rgb(255, 255, 255);
+}
+
+#grqayin_cank{
+  border: transparent;
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:left;
+  align-content: flex-start;
+}
+
+
+
+
+.textayin{
+  border: transparent;
+  margin-top: 10px;
+  width: 80%;
+  height: 8%;
+
+}
+.girq{
+  color: white;
+  cursor: pointer;
+  list-style: none;
+  text-decoration: none;
+}
+
+.girq:hover{
+	color: #08cad8;
+	transition: transform 0.5s;
+
+
+}
+
+.button {
+  position: relative;
+  overflow: hidden;
+  height: 2rem;
+  padding: 0 1rem;
+  border-radius: 1.5rem;
+  background: #3d3a4e;
+  background-size: 400%;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  
+  }
+
+  
+
+.button:hover::before {
+  transform: scaleX(1);
+}
+
+.button-content {
+  position: relative;
+  z-index: 1;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  width: 100%;
+  height: inherit;
+  border-radius: inherit;
+  background: linear-gradient(
+    82.3deg,
+    rgba(150, 93, 233, 1) 10.8%,
+    rgba(99, 88, 238, 1) 94.3%
+  );
+  transition: all 0.475s;
+}
+
+#search{
+  border: transparent;
+  width: 20%;
+  height: 90%;
+  
+  
+}
+.search {
+  display: inline-block;
+  position: relative;
+}
+
+.search input[type="text"] {
+  width: 200px;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.search button[type="submit"] {
+  background-color: #4e99e9;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: .9s ease;
+}
+
+.search button[type="submit"]:hover {
+  transform: scale(1.1);
+  color: rgb(255, 255, 255);
+  background-color: blue;
+}
+
+
+
+#tesanyut{
+  border: transparent;
+  width: 100%;
+  height: 70%;
+  margin-top: 20px;
+}
+
+#jarangutyun{
+  width: 100%;
+  height: 100vh;
+  
+}
+
+#title_jar{
+  width: 100%;
+  height: 10%;
+  text-align: center;
+  color: white;
+}
+
+#nkaragrutyun{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 90%;
+}
+
+#bnutagir{
+  border:transparent;
+  width: 50%;
+  height: 90%;
+  color: white;
+  text-align: center;
+}
+
+#patker{
+  border: transparent;
+  width: 50%;
+  height: 90%;
+  background-image: url(../img/patkerasrah.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+
+
+
+
+
+
+
+

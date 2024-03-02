@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/mediagr.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'icon_erku/css/all.css' %}">
+<link rel="stylesheet" href="{% static 'css/style3.css' %}">
+    <title>{{ link }}</title>
+</head>
+<body>
+    <div id="arajnayin">
+    <div id="menu">
+        <div id="logo2">
+            <a href="{% url 'home_en' %}"><img id="glavni1" src="{% static 'img/logo.png' %}" alt=""></a>
+        </div>
+        <div id="menu1">
+            <ul id="ul_menu">
+                <li class="ul_li"><a class="a_menu" href="{% url 'home_en' %}">main page</a></li>
+                <li class="ul_li"><a class="a_menu" href="{% url 'download_en' %}">online library</a></li>
+                <li class="ul_li"><a class="a_menu" href="{% url 'mijin_en' %}">education</a></li>
+                <li class="ul_li"><a class="a_menu" href="{% url 'dimord_en' %}">applicant</a></li>
+            </ul>
+        </div> 
+        <div id="menu2">
+            <ul id="ul_menu">
+                &emsp;<li><i onclick="a()" class="fa-solid fa-bars icon" id="start"></i></li>
+            </ul>
+        </div> 
+    </div>
+</div>
+    <div id="glxavor11">
+       <div id="media">
+
+        <ul>
+            <li class="ul_li_media"><a class="a_menu_media" href="{% url 'home_en' %}">main page</a></li>
+            <br>
+            
+            <li class="ul_li_media"><a class="a_menu_media" href="{% url 'download_en' %}">online library</a></li>
+            <br>
+            <li class="ul_li_media"><a class="a_menu_media" href="{% url 'mijin_en' %}">education</a></li>
+            <br>
+            <li class="ul_li_media"><a class="a_menu_media" href="{% url 'dimord_en' %}">applicant</a></li>
+            <br>
+        </ul>
+
+       </div>
+   
+
+    
+<div id="cank">
+    <div id="gradaran">
+        <h1 id="title_gr">L I B R A R Y</h1>
+    </div>
+    <div id="grqayin_cank">
+        <div class="textayin">
+        {% for i in pdfiles %}
+        <a class="girq" href="{{ i.file.url }}"><span>{{ i.name }}</span></a>
+        <button class="button">
+            <a href="{{ i.file.url }}" class="girq" download ><span class="button-content">Download </span></a>
+        </button>
+        <br>
+        <br>
+        {% endfor %}
+    </div>
+    <div class="pagination">
+        {% if pdfiles.has_previous %}
+            <a href="?page=1" class="btn btn-primary py-3 px-5">&laquo first page</a>
+            <a href="?page={{ pdfiles.previous_page_number }}" class="btn btn-primary py-3 px-5">previous page</a>
+          {% endif %}
+          {% if pdfiles.has_next %}
+              <a href="?page={{ pdfiles.next_page_number }}" class="btn btn-primary py-3 px-5">Next page</a>
+              <a href="?page={{ pdfiles.paginator.num_pages }}" class="btn btn-primary py-3 px-5">Last page &raquo</a>
+          {% endif %}
+
+      </div>
+
+
+    </div>
+
+</div>
+<div id="search">
+    <form action="{% url 'searchuser' %}" method="get">
+    <div class="search">
+        <input id="search_input" placeholder="Search..." name="p" type="text">
+        <button type="submit">Go</button>
+      </div> 
+    </form>
+      <div id="tesanyut">
+        <video controls width="100%" height="100%" >
+            <source src="{{ myvideo.video.url }}" type="video/mp4">
+        </video>
+      </div>
+
+</div>
+
+
+
+</div>
+</div>
+  <script src="{% static 'js/grscript.js' %}"></script>
+</body>
+</html>
