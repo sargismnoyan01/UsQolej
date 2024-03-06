@@ -7,6 +7,8 @@ from django.http import FileResponse, HttpResponseNotFound
 from django.core.paginator import Paginator
 import os
 from .forms import *
+from django.core.mail import EmailMessage
+from UsQolej.settings import EMAIL_HOST_USER
 
 
 class HomeListView(ListView):
@@ -127,6 +129,7 @@ class ContactUsPage(DetailView):
 
     def get(self,request):
         form=ContactModelForm
+        
 
         context={
             'link':'կապ մեզ հետ',
@@ -138,8 +141,15 @@ class ContactUsPage(DetailView):
     def post(self,request):
         form=ContactModelForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('home_hy')
+                email=EmailMessage(
+                subject=f'Նոր նամակ VSC-ից',
+                body=f"Անուն ազգանուն-{request.POST.get('name')} \n Ենթատեքստ - {request.POST.get('subject')} Նամակ - {request.POST.get('message')}",
+                from_email=EMAIL_HOST_USER,
+                to=['vardenisibsqolej@gmail.com'],
+                )
+                email.send()
+                form.save()
+                return redirect('home_hy')
         else:
             return ContactModelForm()
         

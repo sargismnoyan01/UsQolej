@@ -6,7 +6,8 @@ from django.http import FileResponse, HttpResponseNotFound
 from django.conf import settings
 from django.core.paginator import Paginator
 from .forms import *
-
+from django.core.mail import EmailMessage
+from UsQolej.settings import EMAIL_HOST_USER
 
 
 class EnHomeListView(ListView):
@@ -130,8 +131,15 @@ class EnContactUsPage(DetailView):
     def post(self,request):
         form=EnContactModelForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('home_en')
+                email=EmailMessage(
+                subject=f'Նոր նամակ ARM-ZONA-ից',
+                body=f"Անուն ազգանուն-{request.POST.get('name')} \n Ենթատեքստ - {request.POST.get('subject')} \n Նամակ - {request.POST.get('message')}",
+                from_email=EMAIL_HOST_USER,
+                to=['vardenisibsqolej@gmail.com'],
+                )
+                email.send()
+                form.save()
+                return redirect('home_en')
         else:
             return EnContactModelForm()
         
