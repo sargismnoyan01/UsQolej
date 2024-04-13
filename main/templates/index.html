@@ -14,15 +14,16 @@
 </div>            
     </div>
   </section> -->
-  <section id="intro">
+  <section id="intro">z
     <div class="intro-container wow fadeIn" class="container demo" class="content">
         <canvas id="demo-canvas"></canvas>
         <div class="container demo">
             <div class="content">
                 <div>
                     <canvas id="demo-canvas"></canvas>
-                    <h1 class="main-title" id="ggg" class="mb-4 pb-0"> ԲԱՐԻ ԳԱԼՈՒՍՏ 
-                        <br>Վարդենիսի<br><span>&lt;&lt;Բադեյան&gt;&gt;</span> Պետական քոլեջ </br>
+                    <h3 class="main-title" id="ggg" class="mb-4 pb-0">{{ titletext.text | safe }} 
+                      <!-- ԲԱՐԻ ԳԱԼՈՒՍՏ 
+                        <br>Վարդենիսի<br><span>&lt;&lt;Բադեյան&gt;&gt;</span> Պետական քոլեջ </br> -->
                 </div>
             </div>
         </div>
@@ -36,12 +37,16 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-6">
-            <h2>Քոլեջի մասին</h2>
-            <p>{{ aboutcollege.txt }}</p>
+            <br> <br>
+            <img src="{{ titletext.img.url }}" alt="" width="550" height="630">
+
           </div>
-          <div class="col-lg-3">
-            <h3>Հասցե</h3>
-            <p>{{ aboutcollege.address }}</p>
+          <div class="col-lg-6">
+            <!-- <h3>Հասցե</h3>
+            <p>{{ aboutcollege.address }}</p> -->
+
+            <h2>Քոլեջի մասին</h2>
+            <p>{{ aboutcollege.txt }}</p>          
           </div>
           <div class="col-lg-3">
             <h3></h3>

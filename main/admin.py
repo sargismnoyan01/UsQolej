@@ -12,6 +12,7 @@ admin.site.register(PDFiles)
 admin.site.register(MyVideo)
 admin.site.register(Contact)
 admin.site.register(SubStuffs)
+admin.site.register(TitleText)
 
 @admin.register(Staffs)
 class StaffsModelAdmin(admin.ModelAdmin):

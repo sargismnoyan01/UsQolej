@@ -135,3 +135,16 @@ class SubStuffs(models.Model):
     class Meta:
         verbose_name='Աշխատակազմի կարծիքներ'
         verbose_name_plural='Աշխատակազմի կարծիքներ'
+
+class TitleText(models.Model):
+    text=models.CharField('Գլխավորի տեքստ',max_length=255)
+    img=models.ImageField('Գլխավոր նկար',upload_to='main_imagers',null=True)
+
+
+
+    def __str__(self) -> str:
+        return self.text
+    
+    class Meta:
+        verbose_name='Գլխավորի տեքստ և նկար'
+        verbose_name_plural='Գլխավորի տեքստ և նկար'

@@ -17,9 +17,12 @@ class HomeListView(ListView):
     def get(self,request):
         aboutcollege=AboutCollege.objects.first()
         professions=Professions.objects.all()
+        professionsf=Professions.objects.first()
+
         staffs=Staffs.objects.all()
         questions=Questions.objects.all()
         contactus=ContactUs.objects.first()
+        titletext=TitleText.objects.first()
 
         context={
             'link':'Վարդենիսի Բադեյան Պետական Քոլեջ',
@@ -28,6 +31,8 @@ class HomeListView(ListView):
             'staffs':staffs,
             'questions':questions,
             'contactus':contactus,
+            'titletext':titletext,
+            'professionsf':professionsf,
             
 
                 }

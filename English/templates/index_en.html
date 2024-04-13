@@ -8,8 +8,7 @@
       <div>
          <canvas id="demo-canvas"></canvas>
            <h1  class="main-title" id="ggg" class="mb-4 pb-0"> 
-                    WELCOME TO
-   <br>Vardenis  "Badeyan"  state  college</h1>  </br>     
+            {{ titletext.text  }}</h1>  </br>     
       </div>
    </div>
 </div>            
@@ -23,12 +22,14 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-6">
+              <br> <br>
+              <img src="{{ titletext.img.url }}" alt="" width="550" height="630">
+            </div>
+            <div class="col-lg-6">
               <h2>About college</h2>
-              <p>{{ enaboutcollege.txt }}</p>
+              <p>{{ enaboutcollege.txt }}</p>          
             </div>
             <div class="col-lg-3">
-              <h3>Address</h3>
-              <p>{{ enaboutcollege.address }}</p>
             </div>
             <div class="col-lg-3">
               <h3></h3>

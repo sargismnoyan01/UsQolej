@@ -11,6 +11,7 @@ admin.site.register(EnPDFiles)
 admin.site.register(EnMyVideo)
 admin.site.register(EnContact)
 admin.site.register(EnSubStuffs)
+admin.site.register(EnTitleText)
 
 
 @admin.register(EnStaffs)

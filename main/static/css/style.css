@@ -471,7 +471,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   animation: slide_animation 60s infinite; /* Change the duration and repetition as needed */
 }
 
-@keyframes slide_animation {
+/* @keyframes slide_animation {
   0% { background-image: url(../img/intro-bg.jpg); }
   10% { background-image: url(../img/0.jpg); }
   20% { background-image: url(../img/intro-bg.jpg); }
@@ -482,12 +482,8 @@ body.mobile-nav-active #mobile-nav-toggle {
   80% { background-image: url(../img/0.jpg); }
   90% { background-image: url(../img/intro-bg.jpg); }
   100% { background-image: url(../img/0.jpg); } 
-}
+} */
 
-
- /* @keyframes intro-2023 {
-  Define your keyframes here 
-}   */
 
 #intro:before {
   content: "";

@@ -20,6 +20,7 @@ class EnHomeListView(ListView):
         staffs=EnStaffs.objects.all()
         questions=EnQuestions.objects.all()
         contactus=EnContactUs.objects.first()
+        titletext=EnTitleText.objects.first()
         context={
             'link':'Vardenis Badeyan State College',
             'enaboutcollege':enaboutcollege,
@@ -27,6 +28,7 @@ class EnHomeListView(ListView):
             'staffs':staffs,
             'questions':questions,
             'contactus':contactus,
+            'titletext':titletext,
             
 
 

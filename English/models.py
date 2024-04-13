@@ -134,3 +134,15 @@ class EnSubStuffs(models.Model):
     class Meta:
         verbose_name='Staff opinion'
         verbose_name_plural='Staff opinions'
+
+class EnTitleText(models.Model):
+    text=models.CharField('Main text',max_length=255)
+    img=models.ImageField('main imagers',upload_to='main_imagers',null=True)
+
+
+    def __str__(self) -> str:
+        return self.text
+    
+    class Meta:
+        verbose_name='Main text and imagers'
+        verbose_name_plural='Main text and imagers'
